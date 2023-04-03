@@ -254,6 +254,8 @@ Format: `add [DIRECTION] [DESCRIPTION] [AMOUNT] {CATEGORY} {DATE}`
 >    * `MM` is a two-digit number representing the month
 >    * `YYYY` is a four-digit number representing the year
 
+> ⚠️ Amount has a maximum of $21,474,836.47 and will be rounded down to 2 decimal places!
+
 Example of usage:
 
 You had dinner at Haidilao for $500. To add it to rainyDay, the following command can be provided to rainyDay:
@@ -394,7 +396,7 @@ will help you extract certain transactions based on a specific criteria
 
 Format : `filter [FLAG] {FIELD}`
 
-* The `FLAG` must be one of the following:
+* The `FLAG` must be at least one of the following:
     * `-in` to filter by inflows
     * `-out` to filter by outflows
     * `-d` to filter by description
@@ -815,7 +817,7 @@ Exports your financial statements into a [comma-separated values file](#glossary
 Format: `export`
 > **Background:** A CSV file allows data to be saved in a format which can be viewed as a table.
 >
->💡Saving your financial statements in a CSV file will allow you to view your statements in commonly use applications
+>💡Saving your financial statements in a CSV file will allow you to view your statements in commonly used applications
 > like *Microsoft Excel* and *Google Sheets*.
 
 #### Where to locate exported CSV file?
@@ -856,6 +858,10 @@ that "rainyDay.jar" is going to be stored in
 **Q**: What if I am not able to start up rainyDay? {not able to load the data..?}
 
 **A**: {to be added}
+
+**Q**: I tried to input a value, but it is not showing up as what I typed!
+
+**A**: The value of transactions has a maximum of $21,474,836.47 and will also be rounded down to 2 decimal places!
 
 ## Command Summary
 
