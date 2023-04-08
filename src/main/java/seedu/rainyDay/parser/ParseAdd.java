@@ -11,9 +11,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 //@@author azriellee
-public class ParseAdd {
+public class ParseAdd extends Parser {
     public static final double MAX_AMOUNT = 21474836.47;
-    private static final Logger logger = Logger.getLogger(Parser.class.getName());
+    private static final Logger logger = Logger.getLogger(ParseAdd.class.getName());
 
     public String direction;
     public String description;
@@ -40,7 +40,7 @@ public class ParseAdd {
             }
             logger.info("checking for presence of -date");
             if (addInput.contains("-date")) {
-                date = Parser.setDate(remainingInformation);
+                date = setDate(remainingInformation);
             }
             logger.info("returning new AddCommand object");
             return new AddCommand(description.trim(), direction, amount, category, date);

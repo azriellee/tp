@@ -9,8 +9,8 @@ import seedu.rainyDay.exceptions.RainyDayException;
 import java.util.logging.Logger;
 
 //@@author azriellee
-public class ParseIgnore {
-    private static final Logger logger = Logger.getLogger(Parser.class.getName());
+public class ParseIgnore extends Parser {
+    private static final Logger logger = Logger.getLogger(ParseIgnore.class.getName());
 
     public Command ignoreStatement(String userInput) throws RainyDayException {
         String[] tokens = userInput.split("\\s+", 2);

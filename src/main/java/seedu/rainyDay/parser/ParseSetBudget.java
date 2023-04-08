@@ -8,8 +8,8 @@ import seedu.rainyDay.exceptions.RainyDayException;
 import java.util.logging.Logger;
 
 //@@author BenjaminPoh
-public class ParseSetBudget {
-    private static final Logger logger = Logger.getLogger(Parser.class.getName());
+public class ParseSetBudget extends Parser {
+    private static final Logger logger = Logger.getLogger(ParseSetBudget.class.getName());
 
     public Command setUserBudgetGoal(String userInput) throws RainyDayException {
         try {

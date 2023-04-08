@@ -13,8 +13,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 //@@author ChongQiRong
-public class ParseFilter {
-    private static final Logger logger = Logger.getLogger(Parser.class.getName());
+public class ParseFilter extends Parser {
+    private static final Logger logger = Logger.getLogger(ParseFilter.class.getName());
 
     public Command filterStatement(String userInput) throws RainyDayException {
         String[] action = userInput.split("\\s+", 2);
@@ -75,7 +75,7 @@ public class ParseFilter {
 
                     if (matcherTwoDate.find()) {
                         sizeOfFilterFlagAndField += 1;
-                        LocalDate date = Parser.setDate(matcherTwoDate.group(1));
+                        LocalDate date = setDate(matcherTwoDate.group(1));
                         DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                         String dateString = date.format(formatters);
                         filterFlagAndField.add("-date");
@@ -83,12 +83,12 @@ public class ParseFilter {
 
                         String secondDate = matcherTwoDate.group(2);
                         secondDate = "-date " + secondDate;
-                        date = Parser.setDate(secondDate);
+                        date = setDate(secondDate);
                         formatters = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                         dateString = date.format(formatters);
                         filterFlagAndField.add(dateString);
                     } else {
-                        LocalDate date = Parser.setDate(matcher.group(6));
+                        LocalDate date = setDate(matcher.group(6));
                         DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                         String dateString = date.format(formatters);
                         filterFlagAndField.add("-date");

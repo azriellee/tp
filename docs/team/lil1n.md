@@ -15,6 +15,8 @@ Given below are my contributions to the project
 
 ### Enhancements implemented
 
+- Feature of adding a transaction
+- Feature of deleting a transaction
 - Enhanced date to be of the format day/month/year, where
     - day can be represented by a one digit or a two-digit number
     - month can be represented by a one digit or a two-digit number
@@ -24,6 +26,7 @@ Given below are my contributions to the project
 
 - Features: Adding a transaction
 - Features: Deleting a transaction
+- FAQ
 
 ### Contributions to the Developer Guide
 

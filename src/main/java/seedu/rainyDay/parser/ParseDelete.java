@@ -9,8 +9,8 @@ import seedu.rainyDay.exceptions.RainyDayException;
 import java.util.logging.Logger;
 
 //@@author azriellee
-public class ParseDelete {
-    private static final Logger logger = Logger.getLogger(Parser.class.getName());
+public class ParseDelete extends Parser {
+    private static final Logger logger = Logger.getLogger(ParseDelete.class.getName());
 
     public Command parseDeleteStatement(String userInput) throws RainyDayException {
         String[] tokens = userInput.split("\\s+");

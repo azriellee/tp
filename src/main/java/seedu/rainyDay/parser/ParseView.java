@@ -11,8 +11,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 //@@author BenjaminPoh
-public class ParseView {
-    private static final Logger logger = Logger.getLogger(Parser.class.getName());
+public class ParseView extends Parser {
+    private static final Logger logger = Logger.getLogger(ParseView.class.getName());
 
     public Command generateReport(String input) throws RainyDayException {
         input = input.substring(4).trim();

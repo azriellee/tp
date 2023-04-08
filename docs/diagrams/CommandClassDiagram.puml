@@ -3,7 +3,6 @@ skinparam classAttributeIconSize 0
 skinparam groupInheritance 2
 hide circle
 hide empty methods
-hide empty fields
 
 package command {
 

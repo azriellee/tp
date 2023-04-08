@@ -2,30 +2,32 @@
 
 Welcome to rainyDay's user guide! Thank you so much for choosing rainyDay. We sincerely hope that rainyDay can
 successfully take you one step closer to reaching your financial goals!
-Should you have any feedback or enquiries, please do not hesitate to drop us at 
+Should you have any feedback or enquiries, please do not hesitate to drop us at
 [rainydayfinancialtracker@gmail.com](mailto:rainydayfinancialtracker@gmail.com).
 
 ## Introduction
 
 ### Motivation of creating rainyDay
 
-In addition to rising costs of living, young adults like yourself just entering the workforce will be exposed to new 
-sources of expenses and income. Thus, rainyDay was created to aid you in keeping track and managing your finances well. 
-rainyDay accomplishes this by providing an easy-to-use and convenient platform to track your [inflows and outflows](#glossary), 
-to help you achieve your financial goals. 
+In addition to rising costs of living, young adults like yourself just entering the workforce will be exposed to new
+sources of expenses and income. Thus, rainyDay was created to aid you in keeping track and managing your finances well.
+rainyDay accomplishes this by providing an easy-to-use and convenient platform to track
+your [inflows and outflows](#glossary),
+to help you achieve your financial goals.
 
-Despite the availability of other financial trackers, only a handful of them have integrated a 
+Despite the availability of other financial trackers, only a handful of them have integrated a
 [Command Line Interface (CLI)](#glossary) into their systems. However, the utilisation of a CLI can significantly
-improve the speed and accuracy of user-provided information. Do not fret if you have not used a CLI before as we 
+improve the speed and accuracy of user-provided information. Do not fret if you have not used a CLI before as we
 will guide you through the [process](#understanding-cli).
 
-With this user guide, you will be guided through every step of the way from installation to the usage of advanced features 
+With this user guide, you will be guided through every step of the way from installation to the usage of advanced
+features
 so that you can be an expert at rainyDay.
 
 ### What rainyDay can do for you
 
-rainyDay supports a variety of features for you to view your [transactions](#glossary). A basic overview is provided as 
-follows: 
+rainyDay supports a variety of features for you to view your [transactions](#glossary). A basic overview is provided as
+follows:
 
 **Transaction related** - adding, deleting and editing transaction entries <br>
 **Viewing related** - View, filter or sort transactions based on criteria  <br>
@@ -73,7 +75,7 @@ Please note the following about the format of commands given under each [feature
 
 ## Quick Start
 
-Now that you have learnt how to use this user guide, you are ready to begin! Next, we will show you how to 
+Now that you have learnt how to use this user guide, you are ready to begin! Next, we will show you how to
 install rainyDay on your device and start using it. Please refer to the steps below:
 
 1. Ensure that you have Java 11 installed on your computer
@@ -93,20 +95,19 @@ install rainyDay on your device and start using it. Please refer to the steps be
        ![paste.png](images/UserGuide/paste.png)
 4. To run "rainyDay.jar" on the command line, do the following:
     1. Open the folder containing "rainyDay.jar" and click on the address bar <br>
-       ![folderpath.png](images/UserGuide/folderpath.png)
+       ![folderpath.png](images/UserGuide/folderPath.png)
     2. You will need to open rainyDay in your CLI. This can be done by typing the word ["cmd"](#glossary) in the folder
        path in the address bar as shown <br>
        ![cmd.png](images/UserGuide/cmd.png)
     3. Press Enter. Your Command Line should now be open in the folder containing "rainyDay.jar" as shown below. The
-       location you saved rainyDay should be shown, in this example we saved it in the path "\Users\azriel\OneDrive -
-       National
-       University of Singapore\Desktop\TP jar file"
-       ![cmd prompt open.png](images/UserGuide/cmdpromptopen.png)
+       location you saved rainyDay should be shown, in this example we saved it in the path
+       "\Users\Qi Rong\Downloads\rainyDay Folder"
+       ![cmd prompt open.png](images/UserGuide/cmdPromptOpen.png)
 5. Type `java -jar rainyDay.jar` in the terminal and press Enter on your keyboard to start the application. You should
    see the following if the start up is successful.
-   ![cmd start up.png](images/UserGuide/cmdstartup.png)
+   ![cmd start up.png](images/UserGuide/cmdStartUp.png)
 6. Type your name and press Enter. The following will be shown:
-   ![cmd enter name.png](images/UserGuide/cmdentername.png)
+   ![cmd enter name.png](images/UserGuide/cmdEnterName.png)
 
 ## Understanding CLI
 
@@ -148,8 +149,8 @@ install rainyDay on your device and start using it. Please refer to the steps be
 
 ### Viewing help
 
-Welcome to the help section of rainyDay! Now that you have started rainyDay by following [Quick Start](#quick-start), 
-you will need to know the format of inputs to send to rainyDay. Whenever you find yourself stuck trying to perform a 
+Welcome to the help section of rainyDay! Now that you have started rainyDay by following [Quick Start](#quick-start),
+you will need to know the format of inputs to send to rainyDay. Whenever you find yourself stuck trying to perform a
 certain task, don't worry! The help command is here to help you every step of the way!
 
 To get an overview of possible commands and their respective formats, you can use the `help` command as seen
@@ -170,42 +171,7 @@ This command will give you more information on the particular command, such as i
 For instance, suppose you want to find out more information on rainyDay's `add` command, you can type the following
 command: <br>
 
-`> help add`
-
-
-```
-> help add
-+====================================================================================================+
-| Add command                 | Used to add a new entry to rainyDay                                  |
-+====================================================================================================+
-| Details       | Requirement | Description                                                          |
-+---------------+-------------+----------------------------------------------------------------------+
-| -in / -out    | Mandatory   | Used to denote if the entry is an inflow or an outflow               |
-| <DESCRIPTION> | Mandatory   | Used to describe the entry. Description will be left blank if omitted|
-| $<VALUE>      | Mandatory   | Used to set the value of the entry.                                  |
-| -c <CATEGORY> | Optional    | Used to denote the category of the entry. Set to Misc if omitted     |
-| -date <DATE>  | Optional    | Used to denote the date of the entry. Set to present date if omitted |
-+-----------------------------+----------------------------------------------------------------------+
-| Note: DESCRIPTION and CATEGORY cannot contain "-" character                                        |
-+-----------------------------+----------------------------------------------------------------------+
-+====================================================================================================+
-| Example Usage               | Description                                                          |
-+-----------------------------+----------------------------------------------------------------------+
-| add -in Salary $2113.09     | Adds entry with description: Salary and value: $2113.09 as inflow    |
-|                             |                                                                      |
-| add -out Noodles $5         | Adds entry with description: Noodles and value: $5 as outflow        |
-|                             |                                                                      |
-| add -out Bus $0.98 -c       | Adds entry with description: Bus and value: $0.98 as outflow, with   |
-| Transport                   | its category set to Transport and date set to present date           |
-|                             |                                                                      |
-| add -out Haidilao $500      | Adds entry with description: Haidilao and value: $5000 as outflow,   |
-| -date 22/03/2018            | with its category set to Food and date set to 22nd March, 2018       |
-|                             |                                                                      |
-| add -out Bubble Tea $5.20   | Adds entry with description: Bubble Tea and value: $5.20 as outflow, |
-| -c Food -date 22/03/2018    | with its category set to Food and date set to 22nd March, 2018       |
-+====================================================================================================+
-> 
-```
+![helpAdd.png](images/UserGuide/helpAdd.png)
 
 ### Transactions
 
@@ -243,8 +209,8 @@ Format: `add [DIRECTION] [DESCRIPTION] [AMOUNT] {CATEGORY} {DATE}`
     * `YEAR` needs to be a four-digit number
     * When this field is omitted, the default date will be set to the day when the transaction is added to rainyDay
 
-> ⚠️ Amount provided must be positive and cannot be more than $21,474,836.47!
-> 
+> ⚠️ Amount provided must be a positive value and cannot be more than $21,474,836.47!
+>
 > ⚠️ `DESCRIPTION` and `CATEGORY` cannot contain dash `-`.
 
 > 💡 The flags `-c` and `-date` can be used exclusively. The following are also valid formats:
@@ -255,32 +221,19 @@ Format: `add [DIRECTION] [DESCRIPTION] [AMOUNT] {CATEGORY} {DATE}`
 Example of usage:
 
 You had dinner at Haidilao for $500. To add it to rainyDay, you can use the following command:
-
-```
-> add -out Haidilao $500
-Done! Added: out for Haidilao, -$500.00, in category miscellaneous on 30/03/2023
-```
+![add1Haidilao](images\UserGuide\add1Haidilao.png)
 
 You received an allowance of $20 on 01/03/2023. To add it to rainyDay, you can use the following command:
 
-```
-> add -in Allowance $20 -c Allowance -date 01/03/2023
-Done! Added: in for Allowance, +$20.00, in category Allowance on 01/03/2023
-```
+![add2allowance](images\UserGuide\add2Allowance.png)
 
 You had beef noodles for $12. To add it to rainyDay, you can use the following command:
 
-```
-> add -out beef noodles $12 -c Food and Drinks
-Done! Added: out for beef noodles, -$12.00, in category Food and Drinks on 30/03/2023
-```
+![add3beefnoodles](images\UserGuide\add3beefnoodles.png)
 
 You received your pay of $50000 on 26/03/2023. To add it to rainyDay, you can use the following command:
 
-```
-> add -in Pay $50000 -date 26/03/2023
-Done! Added: in for Pay, +$50000.00, in category miscellaneous on 26/03/2023
-```
+![add4pay](images\UserGuide\add4Pay.png)
 
 [Jump back to features overview](#features-overview)
 
@@ -301,38 +254,16 @@ Format: `view {TIMESPAN} {-sort}`
 
 > 💡 To view all entries you can use -all in place of a specific time in TIMESPAN
 
-```
-view
-+====================================================================================================+
-|Here is your financial report!                                                                      |
-+------+---------------------------------------------+--------------+---------------------+----------+
-|Index |Description                                  |Amount        |Category             |Date      |
-|000001|Haidilao                                     | -$500.00     |miscellaneous        |30/03/2023|
-|000002|Allowance                                    | +$20.00      |Allowance            |01/03/2023|
-|000003|beef noodles                                 | -$12.00      |Food and Drinks      |30/03/2023|
-|000004|Pay                                          | +$50000.00   |miscellaneous        |26/03/2023|
-+------+---------------------------------------------+--------------+---------------------+----------+
-|Viewing all entries from 2023-03-01 till 2023-03-31                                                 |
-|Total Inflow: $50020.00                                                                             |
-|Total Outflow: $512.00                                                                              |
-|Remaining value: $49508.00                                                                          |
-+====================================================================================================+
-```
-
 Example of usage:
 
 You would like to view all of your transactions for the current month, to check if you are staying within your budget.
 To do that, you can use the following command:
 
-```
-> view
-```
+![view.png](images/UserGuide/view.png)
 
 You want to know what you spent the most on in the past 3 months. To do that you can use the following command:
 
-```
-> view 3m -sort
-```
+![viewTwoMSort.png](images/UserGuide/viewTwoMSort.png)
 
 [Jump back to features overview](#features-overview)
 
@@ -356,24 +287,7 @@ To delete the transaction with the description "beef noodles", you can use the c
 The transaction with the description "beef noodles" will be deleted, and the transactions shown to you
 subsequently after requesting to view the transactions will be as such: <br>
 
-```
-> delete 3
-Done, deleted "beef noodles" from the financial report
-> view
-+====================================================================================================+
-|Here is your financial report!                                                                      |
-+------+---------------------------------------------+--------------+---------------------+----------+
-|Index |Description                                  |Amount        |Category             |Date      |
-|000001|Haidilao                                     | -$500.00     |miscellaneous        |30/03/2023|
-|000002|Allowance                                    | +$20.00      |Allowance            |01/03/2023|
-|000003|Pay                                          | +$50000.00   |miscellaneous        |26/03/2023|
-+------+---------------------------------------------+--------------+---------------------+----------+
-|Viewing all entries from 2023-02-28 till today                                                      |
-|Total Inflow: $50020.00                                                                             |
-|Total Outflow: $500.00                                                                              |
-|Remaining value: $49520.00                                                                          |
-+====================================================================================================+
-```
+![delete](images\UserGuide\delete.png)
 
 [Jump back to features overview](#features-overview)
 
@@ -394,7 +308,7 @@ Format : `edit [INDEX] [FLAG] {NEWFIELD}`
 
 Example of usage:
 
-Suppose you realised you forgot to add the "Category" for entry 1, and you would like to place it under 
+Suppose you realised you forgot to add the "Category" for entry 1, and you would like to place it under
 "Food and Drinks". You can use the following command:
 
 ![editCategory.png](images/UserGuide/editCategory.png)
@@ -408,23 +322,20 @@ You can use the following command:
 
 ![editValue.png](images/UserGuide/editValue.png)
 
-
 ![editValueView.png](images/UserGuide/editValueView.png)
-
 
 What happens if you realised you made multiple mistakes in entry 3. Don't worry! You can edit multiple fields at the
 same time using multiple flags. However, do take note of the flag order as listed below.
-> ⚠️  Multiple flags may be used at once but must be in this order:
+> ⚠️ Multiple flags may be used at once but must be in this order:
 >
 > `-in` or `out` -> `-d` -> `-v` -> `-c` -> `-date`
 
-So instead of deleting and adding an entirely new entry, you can use the following command to update the required fields:
+So instead of deleting and adding an entirely new entry, you can use the following command to update the required
+fields:
 
 ![editMultipleEntries.png](images/UserGuide/editMultipleEntries.png)
 
-
 ![editMultipleEntriesView.png](images/UserGuide/editMultipleEntriesView.png)
-
 
 [Jump back to features overview](#features-overview)
 
@@ -444,7 +355,7 @@ Format : `filter [FLAG] {FIELD}`
 * No `FIELD` is required when `-in` or `-out` flag is used
 * date `FIELD` must be in the form DD/MM/YYYY
 * For the `-date` flag, if one date `FIELD` is specified then it is for a specific date. If two date `FIELD` is present
-    then it filters by a range. An example is provided below.
+  then it filters by a range. An example is provided below.
 
 Example of usage:
 
@@ -452,7 +363,7 @@ Let's say you added a couple more entries. And using `view -all` provides you wi
 
 ![filterViewAll.png](images/UserGuide/filterViewAll.png)
 
-> 💡 Note the use of `view -all` instead of `view` as `view` only provides entries in the current month. 
+> 💡 Note the use of `view -all` instead of `view` as `view` only provides entries in the current month.
 
 Suppose you want to find out transactions labelled "Food and Drinks", you can use the following command:
 
@@ -465,11 +376,11 @@ But do take note of the order as listed below:
 >
 > `-in` or `out` -> `-d` -> `-c` -> `-date`
 
-Suppose you want to find out what "Food and Drinks" you had from 30th March 2023 to 7th April 2023, you 
+Suppose you want to find out what "Food and Drinks" you had from 30th March 2023 to 7th April 2023, you
 can use the following command:
 
-> 💡 Note that the first date(e.g. 30/3/2023) provided must be before the second date(e.g. 7/4/2023) when you are 
->  indicating a date range.
+> 💡 Note that the first date(e.g. 30/3/2023) provided must be before the second date(e.g. 7/4/2023) when you are
+> indicating a date range.
 
 ![filterMultipleFlags.png](images/UserGuide/filterMultipleFlags.png)
 
@@ -482,56 +393,20 @@ keep a more accurate track of your finances by allowing you to ignore certain tr
 of your inflow and outflow.
 Conversely, the "unignore" feature is to include a transaction that was previously ignored.
 
-Format: `ignore [index]` or `unignore [index]`
+Format: `ignore [INDEX]` or `unignore [INDEX]`
 
 * `index` The index of the entry you want to ignore, obtained by using the `view` command
 
 Example of Usage:
 
-You have received a one-time payment from government GST refunds. You would like to keep track of it, however you do 
-not want to include it in your budget calculations. 
+You have received a one-time payment from government GST refunds. You would like to keep track of it, however you do
+not want to include it in your budget calculations.
 
-```
-view
-+====================================================================================================+
-|Here is your financial report!                                                                      |
-+------+---------------------------------------------+--------------+---------------------+----------+
-|Index |Description                                  |Amount        |Category             |Date      |
-|000001|chicken rice                                 | -$5.00       |Food and Drinks      |25/03/2023|
-|000002|beef noodles                                 | -$12.00      |Food                 |22/03/2023|
-|000003|Haidilao                                     | -$500.00     |miscellaneous        |22/03/2023|
-|000004|GST refund                                   | +$500.00     |grants               |30/03/2023|
-+------+---------------------------------------------+--------------+---------------------+----------+
-|Viewing all entries from 2023-02-28 till today                                                      |
-|Total Inflow: $500.00                                                                               |
-|Total Outflow: $517.00                                                                              |
-|Remaining value: -$17.00                                                                            |
-+====================================================================================================+
-```
+![ignoreView.png](images/UserGuide/ignoreView.png)
 
 To ignore the entry, you can use the following command:
 
-`ignore 4`
-
-```
-> ignore 4
-Done, Entry 4 ignored from overview calculations
-> view
-+====================================================================================================+
-|Here is your financial report!                                                                      |
-+------+---------------------------------------------+--------------+---------------------+----------+
-|Index |Description                                  |Amount        |Category             |Date      |
-|000001|chicken rice                                 | -$5.00       |Food and Drinks      |25/03/2023|
-|000002|beef noodles                                 | -$12.00      |Food                 |22/03/2023|
-|000003|Haidilao                                     | -$500.00     |miscellaneous        |22/03/2023|
-|000004|GST refund                                   | Ignored      |grants               |30/03/2023|
-+------+---------------------------------------------+--------------+---------------------+----------+
-|Viewing all entries from 2023-02-28 till today                                                      |
-|Total Inflow: $0.00                                                                                 |
-|Total Outflow: $517.00                                                                              |
-|Remaining value: -$517.00                                                                           |
-+====================================================================================================+
-```
+![ignoreGST.png](images/UserGuide/ignoreGST.png)
 
 [Jump back to features overview](#features-overview)
 
@@ -541,37 +416,27 @@ After knowing how to manage your transactions, the next step to reach your finan
 rainyDay can help you by giving you reminders and encouraging you to stick to your budget! With a set monthly budget,
 rainyDay will remind you how much you have spent for the month with every new expense.
 
-Format : `setbudget GOAL`
+Format : `setbudget [VALUE]`
 
 For example, if you would like to set a monthly budget goal of $1000, you can use the following command:
 
-```
-> setbudget 1000
-Monthly Budget Goal set to $1,000.00!
-```
+![setBudgetGoal.png](images%2FUserGuide%2FsetBudgetGoal.png)
 
 An additional message will accompany new expenses on how much you have spent for the month!
 
-```
-> add -out noodles $5
-Done! Added: out for noodles, -$5.00
-You have spent $544.00/$1000.00, Keep it up!
-```
+![addNoodlesBudget.png](images%2FUserGuide%2FaddNoodlesBudget.png)
 
 If at any point of time you would like to remove this feature, simply set the goal to $0 by using the following command:
 
-```
-> setbudget 0
-Monthly Budget Goal removed!
-```
+![unsetBudgetGoal.png](images%2FUserGuide%2FunsetBudgetGoal.png)
 
 [Jump back to features overview](#features-overview)
 
 ### Shortcuts
 
 After using rainyDay for a period of time, you realise that there are some commands that you seem to repeat more
-often. rainyDay's "shortcut" feature can be utilised to save time! In this section, we'll show you how to create and 
-use shortcuts effectively. Whether you need to add a new shortcut, view an existing one, or delete an old one, we'll 
+often. rainyDay's "shortcut" feature can be utilised to save time! In this section, we'll show you how to create and
+use shortcuts effectively. Whether you need to add a new shortcut, view an existing one, or delete an old one, we'll
 cover them all. So, if you're ready to start working smarter, not harder, let's dive into the world of shortcuts!
 
 * [Adding a shortcut](#adding-a-shortcut)
@@ -585,7 +450,7 @@ If you would like to add some shortcuts, this is how you can create one!
 
 Format: `shortcut [SHORTCUTNAME] -maps [ACTUALCOMMAND]`
 
-* `SHORTCUTNAME` can be any single word of your choice to save a reference to the actual command
+* `SHORTCUTNAME` can be any single word of your choice to reference an actual command
 * `ACTUALCOMMAND` is the actual command which you want your shortcut to perform
 
 Example of usage:
@@ -593,10 +458,7 @@ Example of usage:
 You often eat the same noodle dish from your favourite coffee shop. To save yourself the trouble of typing the same
 command in full, you can create a shortcut by using the following command:
 
-```
-> shortcut FavLunch -maps add -out noodles $4 -c food
-Shortcut successfully added
-```
+![shortcutSet.png](images%2FUserGuide%2FshortcutSet.png)
 
 > ⚠️ Your created shortcut should map to a valid full command for it to work correctly.
 
@@ -612,10 +474,7 @@ Example of Usage:
 You have created the shortcut according to the example in the [adding a shortcut](#adding-a-shortcut) section. Now
 all you have to do is input the name of your created shortcut.
 
-```
-> FavLunch
-Done! Added: out for noodles, -$4.00
-```
+![shortcutUsage.png](images%2FUserGuide%2FshortcutUsage.png)
 
 #### Viewing a shortcut
 
@@ -625,17 +484,7 @@ Example of Usage:
 
 Here's how you can view your shortcuts:
 
-```
-shortcut_view
-+-----------------------------------+-------------------------------------------------------------+
-|Here are your shortcuts!                                                                         |
-+-----------------------------------+-------------------------------------------------------------+
-|Shortcut                           |Mapped Command                                               |
-|a                                  |add -in daily salary $5                                      |
-|v                                  |view                                                         |
-|FavLunch                           |add -out noodles $4 -c food                                  |
-+-----------------------------------+-------------------------------------------------------------+
-```
+![shortcutView.png](images%2FUserGuide%2FshortcutView.png)
 
 #### Deleting a shortcut
 
@@ -643,7 +492,7 @@ At some point, you may discover that the shortcut you created is no longer usefu
 previously added shortcut. In these situations, the `shortcut_delete` command provided by rainyDay can prove to be quite
 handy.
 
-Format: `shortcut_delete [SHORTCUTCOMMAND]`
+Format: `shortcut_delete [SHORTCUTNAME]`
 
 * `SHORTCUTCOMMAND` The shortcut command that you want deleted
 
@@ -654,15 +503,16 @@ Unfortunately, your favourite coffee shop has closed down, and you are no longer
 dish. Now the shortcut you previously created is no longer useful. All you have to do is delete the shortcut with the
 command below:
 
-`shortcut_delete FavLunch`
+![shortcutDelete.png](images%2FUserGuide%2FshortcutDelete.png)
 
 [Jump back to features overview](#features-overview)
 
 ### Data Management
 
 Saving and loading your data is something you don't have to worry about as we got it covered! In this section,
-we'll show you where to locate your saved files and how to export your data to a [CSV](#glossary) file, which is a 
-widely-used file format that can be opened in a variety of software applications. We'll also show you how to export and view 
+we'll show you where to locate your saved files and how to export your data to a [CSV](#glossary) file, which is a
+widely-used file format that can be opened in a variety of software applications. We'll also show you how to export and
+view
 the CSV file using [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel),
 which is a popular spreadsheet program used by many people around the world. Let's get started!
 
@@ -683,11 +533,14 @@ your created shortcuts.
 It is located in the "data" folder within the same folder as your "rainyDay.jar" file. This should have
 been configured in step 3 of the [Quick Start section](#quick-start).
 
-![datafolder.png](images/UserGuide/datafolder.png)
+![datafolder.png](images/UserGuide/dataFolder.png)
 
 The data file is named "rainyDay.json".
 
-![rainyDayjson.png](images/UserGuide/rainyDayjson.png)
+![rainyDayjson.png](images/UserGuide/rainyDayJson.png)
+
+> ⚠️ Do not make any direct changes to the "rainyDay.json" file unless you are familiar with [json](#glossary). Making
+> invalid changes may result in the saved file being lost permanently!
 
 ### Loading saved data
 
@@ -714,13 +567,15 @@ been configured in step 3 of the [Quick Start section](#quick-start). The CSV fi
 
 1. Open your Microsoft Excel application and open a blank workbook.
 2. Click on the *Data* tab found at the top and click on *From
-   Text/CSV*.![csvtoexcel.csv](images/UserGuide/csvtoexcel.png)
+   Text/CSV*.![csvtoexcel.csv](images/UserGuide/csvToExcel.png)
 3. Navigate to the CSV file as directed in
    the [where to locate exported CSV file section](#where-to-locate-exported-csv-file).
 4. Double-click on the CSV file and click the *load* button.
+   ![img.png](images/UserGuide/csv.png)
 5. With steps 1-4, your financial statements should be viewable in a nicely formatted table as shown
    below.
-   ![statementstable.png](images/UserGuide/statementstable.png)
+
+![statementstable.png](images/UserGuide/statementTable.png)
 
 [Jump back to features overview](#features-overview)
 
@@ -749,24 +604,30 @@ that "rainyDay.jar" is going to be stored in
 **A**: When rainyDay detect a [corrupted saved data](#glossary), the data will automatically be deleted. To prevent
 this, it is recommended keep an extra copy of the data somewhere else before you edit the original saved data.
 
+**Q**: I used rainyDay and a folder named "logs" appeared. What is the "logs" file and what is the content inside it?
+
+**A**: The "logs" folder contains files that record the process and status of rainyDay. The files are non-malicious and
+their content does not affect rainyDay's function. The "logs" folder and its content can be ignored or deleted.
+
 ## Command Summary
 
-| Action               | Format <br> Example input                                                                                                                                                                                                                              |
-|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Add a transaction    | `add -DIRECTION $VALUE -c CATEGORY -date DD/MM/YYYY` <br><br> **Example:** <br> `add -in angpao $300` <br> `add -out ipad $120` <br> `add -in income $2000 -c pay -date 05/03/2023` <br> `add -out hawker food $6 -c food and drinks -date 10/03/2023` |
-| Delete a transaction | `delete INDEX` <br><br> **Example:** <br> `delete 1` <br> `delete 2`                                                                                                                                                                                   |
-| View transactions    | `view TIMESPAN -sort`                                                                                                                                                                                                                                  |
-| Help                 | `help` or `help COMMAND`                                                                                                                                                                                                                               |
-| Filter transactions  | `filter FLAG FIELD` <br><br> **Example:** <br> `filter -d school` <br>`filter -date 22/03/2023` <br> `filter -date 01/01/2023 18/03/2023`                                                                                                              |
-| Ignore transaction   | `ignore INDEX` <br><br> **Example:** <br> `ignore 1` <br> `ignore 2`                                                                                                                                                                                   |
-| Unignore transaction | `unignore INDEX` <br><br> **Example:** <br> `unignore 1` <br> `unignore 2`                                                                                                                                                                             |
-| Set Budget           | `setbudget VALUE`                                                                                                                                                                                                                                      |   
-| Add Shortcut         | `shortcut SHORTCUTCOMMAND -maps ACTUALCOMMAND`<br><br> **Example:** <br> `shortcut myshortcut -maps add -out noodles $4`                                                                                                                               |   
-| Use Shortcut         | `SHORTCUTCOMMAND`                                                                                                                                                                                                                                      |
-| View Shortcuts       | `shortcut_view`                                                                                                                                                                                                                                        |
-| Delete Shortcut      | `shortcut_delete SHORTCUTCOMMAND`<br><br> **Example:** <br> `shortcut_delete myshortcut`                                                                                                                                                               |
-| Export to CSV        | `export`                                                                                                                                                                                                                                               |              
-| Exit                 | `bye`                                                                                                                                                                                                                                                  |
+| Action                                          | Format <br> Example input                                                                                                                                                                                                                                    |
+|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Help](#viewing-help)                           | `help {COMMAND}`                                                                                                                                                                                                                                             |
+| [Add a transaction](#adding-a-transaction)      | `add [DIRECTION] [DESCRIPTION] [AMOUNT] {CATEGORY} {DATE}` <br><br> **Example:** <br> `add -in angpao $300` <br> `add -out ipad $120` <br> `add -in income $2000 -c pay -date 05/03/2023` <br> `add -out hawker food $6 -c food and drinks -date 10/03/2023` |
+| [View transactions](#viewing-the-transactions)  | `view {TIMESPAN} {-sort}`                                                                                                                                                                                                                                    |
+| [Delete a transaction](#deleting-a-transaction) | `delete [INDEX]` <br><br> **Example:** <br> `delete 1` <br> `delete 2`                                                                                                                                                                                       |
+| [Edit a transaction](#editing-a-transaction)    | `edit [INDEX] [FLAG] {NEWFIELD}` <br><br> **Example:** <br> `edit 1 -c Food and Drinks` <br> `edit 3 -v $5000 -c Monthly Pay -date 01/04/2023`                                                                                                               |
+| [Filter transactions](#filter-transactions)     | `filter [FLAG] {FIELD}` <br><br> **Example:** <br> `filter -d school` <br>`filter -date 22/03/2023` <br> `filter -date 01/01/2023 18/03/2023`                                                                                                                |
+| [Ignore transaction](#ignoring-a-transaction)   | `ignore [INDEX]` <br><br> **Example:** <br> `ignore 1` <br> `ignore 2`                                                                                                                                                                                       |
+| [Unignore transaction](#ignoring-a-transaction) | `unignore [INDEX]` <br><br> **Example:** <br> `unignore 1` <br> `unignore 2`                                                                                                                                                                                 |
+| [Set Budget](#setting-a-monthly-budget)         | `setbudget [VALUE]`                                                                                                                                                                                                                                          |   
+| [Add Shortcut](#adding-a-shortcut)              | `shortcut [SHORTCUTNAME] -maps [ACTUALCOMMAND]`<br><br> **Example:** <br> `shortcut FavLunch -maps add -out noodles $4`                                                                                                                                      |   
+| [Use Shortcut](#using-a-shortcut)               | `[SHORTCUTNAME]`                                                                                                                                                                                                                                             |
+| [View Shortcuts](#viewing-a-shortcut)           | `shortcut_view`                                                                                                                                                                                                                                              |
+| [Delete Shortcut](#deleting-a-shortcut)         | `shortcut_delete [SHORTCUTNAME]`<br><br> **Example:** <br> `shortcut_delete FavLunch`                                                                                                                                                                        |
+| [Export to CSV](#exporting-to-csv)              | `export`                                                                                                                                                                                                                                                     |              
+| [Exit](#exiting-the-application)                | `bye`                                                                                                                                                                                                                                                        |
 
 [Jump back to Table of Contents](#content-page)
 
@@ -783,6 +644,7 @@ this, it is recommended keep an extra copy of the data somewhere else before you
 | Financial Report       | Represents a compilation of financial statements                                                                                                                 |
 | Flags                  | Has a "-" appended to the front of a symbol, example: "-d", "-date", "-c", etc                                                                                   |
 | Inflow                 | Signify an increment of money on your side, such as deposits into your wallet                                                                                    |
+| Json                   | Stands for JavaScript Object Notation. It is a file format that uses human-readable text to store data                                                           |
 | Outflow                | Signify a decrement of money on your side, such as payments from your wallet                                                                                     |
 | Transaction            | An activity relating to transferring of money                                                                                                                    |
 

@@ -15,16 +15,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ShortcutViewCommandTest {
     private static final String NO_SHORTCUTS = "You do not have any shortcuts configured.";
     private static final String TABLE_BORDER = "" +
-            "+-----------------------------------+-------------------------------------------------------------+";
+            "+------------------------------------+---------------------------------------------------------------+";
 
     private static final String ACKNOWLEDGE_VIEW_SHORTCUT_COMMAND = "" +
-            "|Here are your shortcuts!                                                                         |\n";
+            "|Here are your shortcuts!                                                                            |\n";
     private static final String HEADERS = "" +
-            "+-----------------------------------+-------------------------------------------------------------+\n" +
-            "|Shortcut                           |Mapped Command                                               |\n";
+            "+------------------------------------+---------------------------------------------------------------+\n" +
+            "|Shortcut                            |Mapped Command                                                 |\n";
 
-    private static final String KEY_VALUE_ENTRY = "|key                                |value         " +
-            "                                               |" + System.lineSeparator();
+    private static final String KEY_VALUE_ENTRY = "|key                                 |value         " +
+            "                                                 |" + System.lineSeparator();
     ArrayList<FinancialStatement> statements = new ArrayList<>();
     FinancialReport financialReport = new FinancialReport(statements);
     HashMap<Integer, Double> expenditures = new HashMap<>();

@@ -11,7 +11,7 @@ Hello from rainyDay!
          `='
 No valid save file detected. Starting with empty financial data.
 Welcome new user! What is your name?
-Welcome John
+> Welcome John
 Get started by providing the command "help" to learn the functions offered by rainyDay!
 
 > We hope that you enjoyed using rainyDay, goodbye John

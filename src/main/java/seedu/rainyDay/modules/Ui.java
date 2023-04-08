@@ -52,11 +52,13 @@ public class Ui {
     }
 
     public String readUserName() {
-        System.out.println("Welcome new user! What is your name?");
+        System.out.print("Welcome new user! What is your name?\n");
+        System.out.print("> ");
         String username;
         username = in.nextLine().trim();
         while (username.isEmpty()) {
-            System.out.println("Very funny, you should not have an empty name!\nWhat is your name?");
+            System.out.print("Very funny, you should not have an empty name!\nWhat is your name?\n");
+            System.out.print("> ");
             username = in.nextLine().trim();
         }
         greetUser(username);

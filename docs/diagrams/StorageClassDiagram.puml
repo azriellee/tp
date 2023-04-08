@@ -1,0 +1,14 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam groupInheritance 2
+hide circle
+hide empty methods
+
+class Storage{
+
++{static}loadFromFile(filePath: String): SavedData
++{static}writeToFile(SavedData: savedData, filePath: String): void
++{static}writeToCSV(report: FinancialReport): void
+-{static}checkValidSavedData(savedData: JsonObject): void
+}
+@enduml

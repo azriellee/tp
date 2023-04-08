@@ -5,8 +5,8 @@ import seedu.rainyDay.command.HelpCommand;
 import java.util.logging.Logger;
 
 //@@author BenjaminPoh
-public class ParseHelp {
-    private static final Logger logger = Logger.getLogger(Parser.class.getName());
+public class ParseHelp extends Parser {
+    private static final Logger logger = Logger.getLogger(ParseHelp.class.getName());
 
     public HelpCommand displayHelp(String input) {
         input = input.substring(4);

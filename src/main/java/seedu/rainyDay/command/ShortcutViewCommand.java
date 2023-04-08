@@ -10,23 +10,37 @@ import java.util.logging.Logger;
 public class ShortcutViewCommand extends ShortcutCommand {
     private static final Logger logger = Logger.getLogger(ShortcutAddCommand.class.getName());
     private static final String TABLE_BORDER = "" +
-            "+-----------------------------------+-------------------------------------------------------------+";
+            "+------------------------------------+---------------------------------------------------------------+";
 
     private static final String ACKNOWLEDGE_VIEW_SHORTCUT_COMMAND = "" +
-            "|Here are your shortcuts!                                                                         |\n";
+            "|Here are your shortcuts!                                                                            |\n";
     private static final String HEADERS = "" +
-            "+-----------------------------------+-------------------------------------------------------------+\n" +
-            "|Shortcut                           |Mapped Command                                               |\n";
+            "+------------------------------------+---------------------------------------------------------------+\n" +
+            "|Shortcut                            |Mapped Command                                                 |\n";
     private static final String NO_SHORTCUTS = "You do not have any shortcuts configured.";
 
     public ShortcutViewCommand() {
     }
 
     private static String getShortcutMapping(String key, String value) {
-        String formattedKey = String.format("%s                                   ", key);
-        formattedKey = formattedKey.substring(0, 35);
-        String formattedValue = String.format("%s                                                             ", value);
-        formattedValue = formattedValue.substring(0, 61);
+        String formattedKey;
+        if (key.length() > 36) {
+            formattedKey = key.substring(0, 33) + "...";
+        } else {
+            formattedKey = String.format("%s                                    ", key);
+            formattedKey = formattedKey.substring(0, 36);
+        }
+
+        String formattedValue;
+        if (value.length() > 63) {
+            formattedValue = key.substring(0, 60) + "...";
+
+        } else {
+            formattedValue = String.format("%s                                                               ",
+                    value);
+            formattedValue = formattedValue.substring(0, 63);
+        }
+
         return '|' + formattedKey + '|' + formattedValue + '|' + System.lineSeparator();
     }
 

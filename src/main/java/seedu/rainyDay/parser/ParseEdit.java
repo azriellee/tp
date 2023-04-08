@@ -14,8 +14,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 //@@author ChongQiRong
-public class ParseEdit {
-    private static final Logger logger = Logger.getLogger(Parser.class.getName());
+public class ParseEdit extends Parser {
+    private static final Logger logger = Logger.getLogger(ParseEdit.class.getName());
 
     public Command editStatement(String userInput) throws RainyDayException {
         String[] tokens = userInput.split("\\s+", 3);
@@ -29,7 +29,18 @@ public class ParseEdit {
             throw new RainyDayException(ErrorMessage.EMPTY_FINANCIAL_REPORT.toString());
         }
 
-        int index = Integer.parseInt(tokens[1]);
+        int index = 0;
+        try {
+            index = Integer.parseInt(tokens[1]);
+            if (index <= 0) {
+                throw new IllegalArgumentException();
+            }
+        } catch (Exception e) {
+            logger.warning("edit index not a valid number");
+            throw new RainyDayException(String.format(ErrorMessage.WRONG_EDIT_INDEX.toString(),
+                    RainyDay.savedData.getFinancialReport().getStatementCount() + "!"));
+        }
+
         if (index > lengthOfReport || index <= 0) {
             logger.warning("invalid edit index from user");
             throw new RainyDayException(String.format(ErrorMessage.WRONG_EDIT_INDEX.toString(),
@@ -87,7 +98,7 @@ public class ParseEdit {
 
             if (matcher.group(8).contains("-date")) {
                 try {
-                    LocalDate date = Parser.setDate(matcher.group(8));
+                    LocalDate date = setDate(matcher.group(8));
                     DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                     String dateString = date.format(formatters);
                     editFlagAndField.add("-date");

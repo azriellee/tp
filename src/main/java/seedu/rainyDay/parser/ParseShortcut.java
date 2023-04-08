@@ -6,7 +6,7 @@ import seedu.rainyDay.exceptions.ErrorMessage;
 import seedu.rainyDay.exceptions.RainyDayException;
 
 //@@author KN-CY
-public class ParseShortcut {
+public class ParseShortcut extends Parser {
 
     public Command generateShortcut(String userInput) throws RainyDayException {
         if (!userInput.contains(" -maps ")) {
